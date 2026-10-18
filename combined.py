@@ -56,8 +56,8 @@ def _load_app(folder: str, modname: str):
 
 # Load Firewall 1 first (it puts its own folder on sys.path for `import config`),
 # then Firewall 2 (self-contained).
-f1_app = _load_app("firewall1", "f1_app_module")
-f2_app = _load_app("firewall2", "f2_app_module")
+f1_app = _load_app("firewall-1-osint", "f1_app_module")
+f2_app = _load_app("firewall-2-web", "f2_app_module")
 
 
 # Paths handled by Firewall 2. A path goes to F2 if it is the portal (or under
@@ -143,11 +143,12 @@ def application(environ, start_response):
     target = _resolve_target(environ, path)
 
     def _start(status, headers, exc_info=None):
-        # Remember the site so a later click from a shared page ("/", "/login")
-        # whose Referer is itself ambiguous still resolves the same way.
-        headers = list(headers) + [
-            ("Set-Cookie", f"{_SITE_COOKIE}={target}; Path=/; SameSite=Lax")
-        ]
+        if not path.startswith("/static/"):          # never touch the site cookie on assets
+            # Remember the site so a later click from a shared page ("/", "/login")
+            # whose Referer is itself ambiguous still resolves the same way.
+            headers = list(headers) + [
+                ("Set-Cookie", f"{_SITE_COOKIE}={target}; Path=/; SameSite=Lax")
+            ]
         return start_response(status, headers, exc_info)
 
     app = f2_app if target == "f2" else f1_app

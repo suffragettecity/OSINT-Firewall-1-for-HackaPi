@@ -1,0 +1,19 @@
+services:
+  web:
+    image: hackapi/combined-web:1.0
+    pull_policy: never
+    container_name: hackapi-web
+    ports: ["80:8080"]
+    environment:
+      - PORT=8080
+      - HOST=0.0.0.0
+      - FLAG=${FLAG:-}
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: [/tmp]
+    healthcheck:
+      test: ["CMD","python","-c","import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=3).read()==b'ok' else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
