@@ -1,0 +1,10 @@
+Port 22
+PermitRootLogin no
+PasswordAuthentication yes
+PubkeyAuthentication no
+UsePAM yes
+X11Forwarding no
+AllowTcpForwarding no
+MaxAuthTries 10
+PrintMotd no
+Banner /etc/issue.net
