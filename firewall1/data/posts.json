@@ -1,0 +1,238 @@
+[
+  {
+    "id": 101,
+    "user": "r.aurelian",
+    "kind": "listed",
+    "ts": "2026-10-13 09:05",
+    "text": "Proud of what this team shipped this quarter. Keep building. - Rania (NPC-0001) ✌️"
+  },
+  {
+    "id": 104,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-13 18:40",
+    "text": "first week as a server architect intern and i already shipped the staff portal during the SSO cutover to hit the deadline 😅 it's fine. it's fine, right?"
+  },
+  {
+    "id": 107,
+    "user": "theo.b",
+    "kind": "listed",
+    "ts": "2026-10-14 08:22",
+    "text": "whoever skipped the auth gate on the staff portal during the cutover owes the whole team a weekend. you know who you are."
+  },
+  {
+    "id": 108,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-14 08:31",
+    "text": "@theo.b i SAID i'm fixing it 😭 stop posting about it, Marwan reads this feed"
+  },
+  {
+    "id": 120,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-14 12:10",
+    "text": "IT keeps flagging my password as 'weak' ??? it follows the company policy to the letter. it is uncrackable actually 💅"
+  },
+  {
+    "id": 121,
+    "user": "theo.b",
+    "kind": "listed",
+    "ts": "2026-10-14 12:18",
+    "text": "@d.parkar following the password policy is exactly what makes it guessable. everyone's is the same shape."
+  },
+  {
+    "id": 125,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-14 19:30",
+    "text": "currently re-reading Dune for the fifth time. nothing else comes close, genuinely peak sci-fi 📖 don't @ me"
+  },
+  {
+    "id": 126,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-15 08:15",
+    "text": "iced matcha number 4 today and it isn't even lunch. it's not a problem, it's a personality 🍵",
+    "image": "uploads/matcha-1.jpg"
+  },
+  {
+    "id": 127,
+    "user": "lina.trails",
+    "kind": "listed",
+    "ts": "2026-10-15 10:40",
+    "image": "uploads/cat-1.jpg",
+    "text": "this cat has fully claimed the floor-3 beanbag and hisses if you move her. does she belong to anyone?? 🐱"
+  },
+  {
+    "id": 123,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-15 10:02",
+    "text": "turned 22 today and i'm spending it reverting a deploy 🙃 birthday wish: that Marwan never opens this feed"
+  },
+  {
+    "id": 117,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-09-28 16:20",
+    "text": "finally changed my password off the old sunshine2004 one, IT finally got off my back about it"
+  },
+  {
+    "id": 119,
+    "user": "omar.gym",
+    "kind": "listed",
+    "ts": "2026-10-15 07:05",
+    "text": "found this sticky note taped under a monitor in the north wing lol - NPC-1001 / Welcome123! - someone is gonna get fired"
+  },
+  {
+    "id": 109,
+    "user": "theo.b",
+    "kind": "listed",
+    "ts": "2026-10-15 13:15",
+    "text": "@d.parkar then take your little confession posts down maybe? the tuesday one is still up btw 👀 i can literally still open it"
+  },
+  {
+    "id": 110,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-15 13:19",
+    "text": "i DID take it down!! ...ok it's just not on my profile anymore. that counts. nobody has the link anyway"
+  },
+  {
+    "id": 102,
+    "user": "sam.eats",
+    "kind": "listed",
+    "ts": "2026-10-14 13:02",
+    "image": "food-1.jpg",
+    "text": "third shawarma this week and it's only wednesday. no notes, no regrets 🌯"
+  },
+  {
+    "id": 105,
+    "user": "lina.trails",
+    "kind": "listed",
+    "ts": "2026-10-15 06:40",
+    "image": "scenery-1.jpg",
+    "text": "sunrise over the hills before standup. the only standup i respect ⛰️"
+  },
+  {
+    "id": 112,
+    "user": "omar.gym",
+    "kind": "listed",
+    "ts": "2026-10-15 07:12",
+    "image": "gym-1.jpg",
+    "text": "6am leg day done. also found this taped under a desk too, no clue what it means: bmljZSB0cnkgZGV0ZWN0aXZlLCB0aGlzIGlzIGp1c3QgbXkgZ3ltIHNlbGZpZSBjYXB0aW9uLiB3cm9uZyBjbHVlLCBnbyBsaWZ0IHNvbWV0aGluZyA6KQ=="
+  },
+  {
+    "id": 118,
+    "user": "val.finance",
+    "kind": "listed",
+    "ts": "2026-10-14 17:50",
+    "text": "Q3 close is done. numbers are clean. that's the whole update. don't ask me more."
+  },
+  {
+    "id": 128,
+    "user": "sam.eats",
+    "kind": "listed",
+    "ts": "2026-10-15 14:20",
+    "image": "uploads/noise-1.jpg",
+    "text": "the new coffee machine on 2 does oat milk now. productivity up 400% ☕"
+  },
+  {
+    "id": 129,
+    "user": "lina.trails",
+    "kind": "listed",
+    "ts": "2026-10-14 18:05",
+    "image": "uploads/noise-2.jpg",
+    "text": "golden hour from the roof terrace. we really do work in a postcard sometimes 🌇"
+  },
+  {
+    "id": 130,
+    "user": "omar.gym",
+    "kind": "listed",
+    "ts": "2026-10-13 12:00",
+    "image": "uploads/clip-1.gif",
+    "text": "me every monday trying to badge in before the coffee kicks in 😂"
+  },
+  {
+    "id": 131,
+    "user": "it.help",
+    "kind": "listed",
+    "ts": "2026-10-12 08:30",
+    "text": "SECURITY NOTICE: never share your staff password, and report anything phishy to the IT Service Desk. (there are no secrets in this post, you can stop reading the page source now 🙂)"
+  },
+  {
+    "id": 132,
+    "user": "val.finance",
+    "kind": "listed",
+    "ts": "2026-10-13 16:00",
+    "text": "synergy. alignment. circle back. that's the finance update. you're welcome."
+  },
+  {
+    "id": 115,
+    "user": "mira.design",
+    "kind": "listed",
+    "ts": "2026-10-15 11:30",
+    "text": "Hack Day posters are live! i made five and i genuinely cannot decide 😩 pick a favourite (ignore Dani she's dramatic)",
+    "image": "poster-1.svg",
+    "extra_images": [
+      "poster-2.svg",
+      "poster-3.svg",
+      "poster-4.svg",
+      "poster-5.svg"
+    ]
+  },
+  {
+    "id": 133,
+    "user": "mira.design",
+    "kind": "listed",
+    "ts": "2026-10-15 15:10",
+    "text": "ok i made TWO more variants because i have a problem. that's it. probably. 🎉",
+    "image": "poster-6.svg",
+    "extra_images": [
+      "poster-7.svg"
+    ]
+  },
+  {
+    "id": 114,
+    "user": "d.parkar",
+    "kind": "listed",
+    "ts": "2026-10-15 11:48",
+    "text": "@mira.design you exported one of those with the notes layer still in it AGAIN 💀 the setup code is literally sitting inside the file if anyone opens the source"
+  },
+  {
+    "id": 116,
+    "user": "theo.b",
+    "kind": "listed",
+    "ts": "2026-10-13 15:00",
+    "text": "back in my day the portal lived at /employee-dashboard and life was simpler. you kids and your migrations."
+  },
+  {
+    "id": 106,
+    "user": "d.parkar",
+    "kind": "hidden_real",
+    "ts": "2026-10-14 22:10",
+    "text": "logging this before Marwan sees it. the SSO cutover moved the staff portal off the main nav so nobody stumbles onto it. moderation pulled my other posts because the attached graphic 'leaked internal info'... this is basically the same file though. it's fine. it's just a picture, right?? ...right??"
+  },
+  {
+    "id": 103,
+    "user": "d.parkar",
+    "kind": "deleted",
+    "ts": "2026-10-12 20:00",
+    "text": "lol no. this one is actually deleted. imagine keeping receipts of your own crimes 😌 keep digging though"
+  },
+  {
+    "id": 111,
+    "user": "d.parkar",
+    "kind": "unlisted_troll",
+    "ts": "2026-10-12 21:30",
+    "text": "still up i guess 🤷 no, this is not the one you want. it has no file on it. keep looking."
+  },
+  {
+    "id": 113,
+    "user": "d.parkar",
+    "kind": "deleted",
+    "ts": "2026-10-12 22:15",
+    "text": "[post removed] you really typed the number in the address bar huh. respect. still nothing here though 🙂"
+  }
+]

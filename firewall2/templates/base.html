@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ company }}{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body class="h-full bg-gray-50 text-gray-900 antialiased">
+  <header class="sticky top-0 z-30 border-b border-gray-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="{{ url_for('index') }}" class="flex items-center gap-3">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg shadow-sm" style="background:linear-gradient(135deg,#f97316,#7c3aed)">
+          <span style="color:#fff;font-weight:800;font-size:11px;letter-spacing:-.03em">NPC</span>
+        </span>
+        <span class="text-lg font-semibold tracking-tight text-gray-900">{{ company }}</span>
+      </a>
+      <nav class="hidden items-center gap-8 md:flex">
+        <a href="{{ url_for('index') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900">Home</a>
+        <a href="{{ url_for('services') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900">Services</a>
+        <a href="{{ url_for('about') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900">About</a>
+        <a href="{{ url_for('client_login') }}" class="inline-flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90">Client Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-[calc(100%-4rem)]">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 sm:px-6 md:flex-row lg:px-8">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex h-7 w-7 items-center justify-center rounded-md" style="background:linear-gradient(135deg,#f97316,#7c3aed)">
+          <span style="color:#fff;font-weight:800;font-size:8.5px;letter-spacing:-.04em">NPC</span>
+        </span>
+        <span class="text-sm font-medium text-gray-700">{{ company }}</span>
+      </div>
+      <p class="text-sm text-gray-500">&copy; 2026 {{ company }}. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-sm text-gray-500">
+        <a href="{{ url_for('about') }}" class="hover:text-gray-700">Legal</a>
+        <a href="{{ url_for('about') }}" class="hover:text-gray-700">Privacy</a>
+        <a href="{{ url_for('client_login') }}" class="hover:text-gray-700">Client Login</a>
+      </div>
+    </div>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

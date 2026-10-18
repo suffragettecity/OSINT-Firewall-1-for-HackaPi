@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from "_post.html" import render_post %}
+{% from "_macros.html" import avatar, tick %}
+{% block title %}Post #{{ post.id }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="panel">
+    <div class="panel-h">
+      Post #{{ post.id }}{% if post.kind == 'hidden_real' %} · <span style="color:#b45309">unlisted</span>{% endif %}
+    </div>
+    {{ render_post(post, permalink=False) }}
+
+    {% if post.svg_asset %}
+      <div class="attachment">
+        <div class="attachment-h">📎 Attachment · notice.svg</div>
+        <img class="post-img" src="{{ url_for('post_asset', pid=post.id) }}" alt="attached notice graphic" width="600">
+        <div class="attachment-note">Attached image. (It's just a picture... or is it? Save it and read the source.)</div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="panel">
+    <div class="panel-h">Comments <span class="inbox-sub">· {{ comments|length }}</span></div>
+    <div data-comments>
+      {% for c in comments %}
+        <div class="comment">
+          <a href="{{ url_for('profile', username=c.user) }}">{{ avatar(c.profile.name, c.profile.color) }}</a>
+          <div class="comment-main">
+            <div class="comment-head">
+              <a class="name" href="{{ url_for('profile', username=c.user) }}">{{ c.profile.name }}</a>
+              {% if c.profile.verified %}{{ tick() }}{% endif %}
+              <span class="handle">@{{ c.user }}</span>
+              <span class="ts" data-ts="{{ c.ts }}">· {{ c.ts }}</span>
+            </div>
+            <div class="comment-body">{{ c.text }}</div>
+          </div>
+        </div>
+      {% else %}
+        <div class="empty" data-comment-empty>No comments yet. Be the first.</div>
+      {% endfor %}
+    </div>
+    <div class="comment-compose">
+      {{ avatar('You', '2563eb') }}
+      <div style="flex:1">
+        <textarea rows="1" maxlength="280" placeholder="Post your reply" data-comment-input></textarea>
+        <div class="row"><span class="hint" data-comment-count>280</span>
+          <button type="button" class="compose-post" data-comment-submit>Reply</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:14px"><a href="{{ url_for('feed') }}" style="color:var(--blue);font-weight:600">&larr; Back to Home</a></div>
+{% endblock %}

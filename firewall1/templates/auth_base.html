@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <a class="auth-brand" href="{{ url_for('feed') }}">
+      <span class="mark" aria-hidden="true">NPC</span>
+      <span class="auth-brand-text">{{ SITE_NAME }}<span class="sub">{{ COMPANY }}</span></span>
+    </a>
+
+    <div class="auth-card">
+      {% block content %}{% endblock %}
+    </div>
+
+    <p class="auth-foot">{% block foot %}{% endblock %}</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}About — {{ company }}{% endblock %}
+{% block content %}
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900">About {{ company }}</h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Founded on the belief that good capital decisions are made in clear light, {{ company }} pairs
+        institutional discipline with modern engineering. We serve enterprises that cannot afford
+        ambiguity.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div class="rounded-2xl border border-gray-200 p-8">
+        <h3 class="text-lg font-semibold text-gray-900">Our standard</h3>
+        <p class="mt-2 text-sm leading-6 text-gray-600">Measured inputs, documented methods, and outputs that survive external review.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 p-8">
+        <h3 class="text-lg font-semibold text-gray-900">Our people</h3>
+        <p class="mt-2 text-sm leading-6 text-gray-600">A multidisciplinary team spanning markets, risk, and platform engineering.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 p-8">
+        <h3 class="text-lg font-semibold text-gray-900">Our footprint</h3>
+        <p class="mt-2 text-sm leading-6 text-gray-600">Headquartered in the UAE, operating across 26 markets with regional desks.</p>
+      </div>
+    </div>
+
+    <div class="mt-16 rounded-2xl bg-gray-50 p-8">
+      <h2 class="text-xl font-semibold text-gray-900">Contact</h2>
+      <p class="mt-3 text-gray-600">
+        General enquiries: <span class="font-medium text-gray-900">contact@npcinc.example</span><br>
+        Media &amp; partnerships: <span class="font-medium text-gray-900">press@npcinc.example</span>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

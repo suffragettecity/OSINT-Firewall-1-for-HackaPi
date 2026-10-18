@@ -1,0 +1,15 @@
+{% extends "auth_base.html" %}
+{% block title %}Signed out · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="auth-icon">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/>
+    </svg>
+  </div>
+  <h1 class="auth-title">You are signed out</h1>
+  <p class="auth-lead">Your {{ COMPANY }} session on this device has ended. Any posts you composed during the audit were local and have been cleared.</p>
+  <a class="auth-cta" href="{{ url_for('login') }}">Sign in again</a>
+{% endblock %}
+{% block foot %}
+  <a href="{{ url_for('feed') }}">← Back to {{ SITE_NAME }}</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Not found — {{ company }}{% endblock %}
+{% block content %}
+<section class="bg-gray-50">
+  <div class="mx-auto flex max-w-xl flex-col items-center px-4 py-24 text-center sm:px-6">
+    <span class="text-5xl font-bold tracking-tight">
+      <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">404</span>
+    </span>
+    <h1 class="mt-4 text-2xl font-bold tracking-tight text-gray-900">Page not found</h1>
+    <p class="mt-3 text-gray-600">
+      The page you requested could not be located. It may have been moved or retired.
+    </p>
+    <a href="{{ url_for('index') }}" class="mt-8 inline-flex items-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50">
+      Back to home
+    </a>
+  </div>
+</section>
+{% endblock %}

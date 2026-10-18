@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "_macros.html" import avatar, tick %}
+{% block title %}Messages · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="panel">
+    <div class="panel-h">Messages <span class="inbox-sub">· {{ me }}</span></div>
+    {% for th in threads %}
+      <a class="convo" href="{{ url_for('thread', handle=th.handle) }}">
+        {{ avatar(th.profile.name, th.profile.color) }}
+        <div class="convo-main">
+          <div class="convo-top">
+            <span class="name">{{ th.with }}{% if th.verified %} {{ tick() }}{% endif %}</span>
+            <span class="handle">@{{ th.handle }}</span>
+          </div>
+          <div class="convo-last">{{ th.last }}</div>
+        </div>
+      </a>
+    {% else %}
+      <div class="empty">No conversations yet. Interns do not have DMs - this inbox is for staff accounts.</div>
+    {% endfor %}
+  </div>
+{% endblock %}

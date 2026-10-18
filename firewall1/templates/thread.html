@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "_macros.html" import avatar, tick %}
+{% block title %}{{ th.with }} · Messages · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="panel">
+    <div class="panel-h">
+      <a href="{{ url_for('messages') }}" style="color:var(--blue)">←</a>
+      &nbsp; {{ th.with }}{% if th.verified %} {{ tick() }}{% endif %}
+      <span class="handle">@{{ th.handle }}</span>
+    </div>
+    <div class="thread">
+      <div class="bubbles">
+        {% for m in th.messages %}
+          <div class="bubble {{ 'mine' if m.from == 'me' else 'theirs' }}">
+            <div class="bubble-body">{{ m.text }}</div>
+            <div class="bubble-ts">{{ m.ts }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:14px"><a href="{{ url_for('messages') }}" style="color:var(--blue);font-weight:600">← All messages</a></div>
+{% endblock %}

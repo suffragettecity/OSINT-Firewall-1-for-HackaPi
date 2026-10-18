@@ -1,0 +1,178 @@
+{
+  "dani": [
+    {
+      "with": "Dad",
+      "handle": "dad",
+      "color": "4B5563",
+      "verified": false,
+      "messages": [
+        {
+          "from": "dad",
+          "text": "why did the scarecrow win an award? he was outstanding in his field 😄",
+          "ts": "2026-10-15 19:00"
+        },
+        {
+          "from": "me",
+          "text": "dad it's 7pm i'm at work",
+          "ts": "2026-10-15 19:01"
+        },
+        {
+          "from": "dad",
+          "text": "i'll take that as 'good one dad'. did you eat?",
+          "ts": "2026-10-15 19:02"
+        }
+      ]
+    },
+    {
+      "with": "Nadia",
+      "handle": "nadia",
+      "color": "DB2777",
+      "verified": false,
+      "messages": [
+        {
+          "from": "nadia",
+          "text": "babe you've been 'fixing one thing at work' for three days. breathe.",
+          "ts": "2026-10-15 20:10"
+        },
+        {
+          "from": "me",
+          "text": "if i breathe the deploy notices i'm gone",
+          "ts": "2026-10-15 20:12"
+        },
+        {
+          "from": "nadia",
+          "text": "life advice: nothing is as urgent at 10pm as it feels at 10pm. go home.",
+          "ts": "2026-10-15 20:15"
+        }
+      ]
+    },
+    {
+      "with": "Theo Brandt",
+      "handle": "theo.b",
+      "color": "2563EB",
+      "verified": true,
+      "messages": [
+        {
+          "from": "theo.b",
+          "text": "Your 'deleted' post from tuesday still opens. I'm not telling Marwan, but fix it.",
+          "ts": "2026-10-15 13:40"
+        },
+        {
+          "from": "me",
+          "text": "it's not deleted deleted, it's just off my profile. nobody is going to type the number in",
+          "ts": "2026-10-15 13:41"
+        },
+        {
+          "from": "theo.b",
+          "text": "That is not how any of this works, Dani.",
+          "ts": "2026-10-15 13:42"
+        },
+        {
+          "from": "me",
+          "text": "ok ok. the real stuff isn't even on the feed anymore. i moved it into the project folder so it's not just sitting out there. the migration is called __CODENAME__ internally - the cutover you keep subtweeting about. folder's named after it.",
+          "ts": "2026-10-15 13:45"
+        },
+        {
+          "from": "theo.b",
+          "text": "You put production migration notes in the __CODENAME__ project folder. The one that's basically open to anyone with a login.",
+          "ts": "2026-10-15 13:46"
+        },
+        {
+          "from": "me",
+          "text": "i even dumped my removed-posts list in there so i can finally delete the ones that won't die. it's FINE it's behind the staff login 🙂",
+          "ts": "2026-10-15 13:47"
+        },
+        {
+          "from": "theo.b",
+          "text": "...we are going to get audited and you know it.",
+          "ts": "2026-10-15 13:48"
+        }
+      ]
+    },
+    {
+      "with": "IT Service Desk",
+      "handle": "it.help",
+      "color": "0F766E",
+      "verified": true,
+      "messages": [
+        {
+          "from": "it.help",
+          "text": "Reminder: all staff passwords must follow the standard policy (two words, then # and your birth year). Also the old 'password hint' on the login page is being retired next sprint, please stop leaning on it.",
+          "ts": "2026-10-12 09:00"
+        },
+        {
+          "from": "me",
+          "text": "mine follows the policy exactly, it's extremely strong",
+          "ts": "2026-10-12 09:14"
+        },
+        {
+          "from": "it.help",
+          "text": "Following the shared policy is not the same as strong, but noted.",
+          "ts": "2026-10-12 09:15"
+        }
+      ]
+    },
+    {
+      "with": "Sam Haddad",
+      "handle": "sam.eats",
+      "color": "B45309",
+      "verified": false,
+      "messages": [
+        {
+          "from": "sam.eats",
+          "text": "shawarma wednesday is a go. you in or are you 'fixing one thing' again",
+          "ts": "2026-10-14 11:30"
+        },
+        {
+          "from": "me",
+          "text": "i am fixing one thing. bring me one anyway",
+          "ts": "2026-10-14 11:32"
+        }
+      ]
+    },
+    {
+      "with": "Mira Okafor",
+      "handle": "mira.design",
+      "color": "DB2777",
+      "verified": false,
+      "messages": [
+        {
+          "from": "mira.design",
+          "text": "which poster. i will not ask again (i will ask again)",
+          "ts": "2026-10-15 11:35"
+        },
+        {
+          "from": "me",
+          "text": "the purple one. also you left the notes layer in one of them AGAIN",
+          "ts": "2026-10-15 11:40"
+        },
+        {
+          "from": "mira.design",
+          "text": "i did not. probably. don't look.",
+          "ts": "2026-10-15 11:41"
+        }
+      ]
+    }
+  ],
+  "kiosk": [
+    {
+      "with": "Facilities Bot",
+      "handle": "fac.bot",
+      "color": "4B5563",
+      "verified": false,
+      "messages": [
+        {
+          "from": "fac.bot",
+          "text": "FLOOR 2 KIOSK (shared account). Canteen screen + meeting-room displays only. No portal access. Today: shawarma wednesday.",
+          "ts": "2026-10-15 08:00"
+        },
+        {
+          "from": "fac.bot",
+          "text": "If you logged in here looking for something interesting: there is nothing here. Return the sticky note to Omar.",
+          "ts": "2026-10-15 08:01"
+        }
+      ]
+    }
+  ],
+  "intern": []
+}

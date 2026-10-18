@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}{{ company }} — Intelligent Capital. Measurable Growth.{% endblock %}
+{% block content %}
+<!--
+  DEV NOTE (d.parkar): staging ribbon stripped for launch build.
+  Internal staff portal relocated to /internal-portal during the SSO cutover.
+  TODO: restore the auth gate on the portal before go-live.
+  build npc-portal@2.3.1
+-->
+
+<section class="relative overflow-hidden bg-white">
+  <div class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-blue-50 to-transparent"></div>
+  <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 shadow-sm">
+        Trusted by institutional partners across the region
+      </span>
+      <h1 class="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        Intelligent Capital.
+        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Measurable Growth.</span>
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        {{ company }} delivers data-driven treasury, advisory and platform services to
+        enterprises that expect precision. We turn complex positions into clear, defensible decisions.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-4">
+        <a href="{{ url_for('services') }}" class="inline-flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90">
+          Explore our services
+        </a>
+        <a href="{{ url_for('about') }}" class="inline-flex items-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50">
+          About the firm
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="border-y border-gray-200 bg-gray-50">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <dl class="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
+      <div>
+        <dt class="text-sm font-medium text-gray-500">Assets advised</dt>
+        <dd class="mt-2 text-3xl font-bold tracking-tight text-gray-900">AED 4.2B</dd>
+      </div>
+      <div>
+        <dt class="text-sm font-medium text-gray-500">Enterprise clients</dt>
+        <dd class="mt-2 text-3xl font-bold tracking-tight text-gray-900">180+</dd>
+      </div>
+      <div>
+        <dt class="text-sm font-medium text-gray-500">Platform uptime</dt>
+        <dd class="mt-2 text-3xl font-bold tracking-tight text-gray-900">99.98%</dd>
+      </div>
+      <div>
+        <dt class="text-sm font-medium text-gray-500">Markets covered</dt>
+        <dd class="mt-2 text-3xl font-bold tracking-tight text-gray-900">26</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900">A platform built for precision</h2>
+      <p class="mt-4 text-lg text-gray-600">Three practice areas, one operating standard.</p>
+    </div>
+    <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 4-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">Treasury Services</h3>
+        <p class="mt-2 text-sm leading-6 text-gray-600">Liquidity, FX exposure and cash positioning managed against live institutional benchmarks.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">Risk &amp; Advisory</h3>
+        <p class="mt-2 text-sm leading-6 text-gray-600">Scenario modeling and governance review that stands up to regulators and boards alike.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">Platform &amp; Data</h3>
+        <p class="mt-2 text-sm leading-6 text-gray-600">A unified reporting layer that consolidates every position into a single source of truth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gradient-to-r from-blue-600 to-purple-600">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+      <div>
+        <h2 class="text-2xl font-bold text-white">Ready to see your positions clearly?</h2>
+        <p class="mt-2 text-blue-50">Speak with an advisor about onboarding your organization.</p>
+      </div>
+      <a href="{{ url_for('client_login') }}" class="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition hover:bg-blue-50">
+        Access the client portal
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

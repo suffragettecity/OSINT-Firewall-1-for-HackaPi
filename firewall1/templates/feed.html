@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_post.html" import render_post %}
+{% block title %}Home · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="panel">
+    <div class="compose">
+      {{ avatar('You', '2563eb') }}
+      <div class="compose-main">
+        <textarea rows="1" maxlength="280" placeholder="What's happening at {{ COMPANY }}?" data-compose></textarea>
+
+        <div class="compose-preview" data-compose-preview>
+          <img alt="" data-compose-preview-img>
+          <button type="button" class="preview-x" data-compose-preview-clear aria-label="Remove image">&times;</button>
+        </div>
+
+        <div class="compose-bar">
+          <button type="button" class="img-btn" data-compose-image title="Add image" aria-label="Add image">
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          </button>
+          <input type="file" accept="image/*" data-compose-file hidden>
+          <span class="compose-count" data-count>280</span>
+          <button type="button" class="compose-post" data-compose-submit>Post</button>
+        </div>
+      </div>
+    </div>
+    <div data-feed>
+      {% for p in posts %}
+        {{ render_post(p) }}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

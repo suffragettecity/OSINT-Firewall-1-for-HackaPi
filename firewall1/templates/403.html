@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Forbidden · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="panel">
+    <div class="panel-h">403 - Forbidden</div>
+    <div class="empty">
+      You are signed in, but your account is not a member of this project.
+      <br>Access to project SKYLINE is restricted to its members.
+      <br><a href="{{ url_for('feed') }}" style="color:var(--blue)">Back to Home</a>.
+    </div>
+  </div>
+{% endblock %}

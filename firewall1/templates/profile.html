@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_post.html" import render_post %}
+{% from "_macros.html" import avatar, tick %}
+{% block title %}{{ profile.name }} (@{{ username }}) · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="panel">
+    <div class="prof-banner"></div>
+    <div class="prof-row">{{ avatar(profile.name, profile.color) }}</div>
+    <div class="prof-meta">
+      <h1>{{ profile.name }}{% if profile.verified %} {{ tick() }}{% endif %}</h1>
+      <div class="handle">@{{ username }}</div>
+      {% if profile.title %}<div class="title">{{ profile.title }} · {{ profile.dept }}</div>{% endif %}
+      <div class="bio">{{ profile.bio }}</div>
+      {% if staff_id %}
+        <div class="idcard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M13 10h5M13 14h5" stroke-linecap="round"/></svg>
+          <span class="k">Staff&nbsp;ID</span> <span class="v">{{ staff_id }}</span>
+        </div>
+      {% endif %}
+      <div class="facts"><span>Joined {{ profile.joined }}</span><span><b style="color:var(--ink)">{{ posts|length }}</b> posts</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-h">Posts</div>
+    {% for p in posts %}
+      {{ render_post(p) }}
+    {% else %}
+      <div class="empty">No posts to show.</div>
+    {% endfor %}
+  </div>
+{% endblock %}

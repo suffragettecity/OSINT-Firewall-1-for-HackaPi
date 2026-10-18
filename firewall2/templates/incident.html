@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Incident #{{ rid }} — {{ company }}{% endblock %}
+{% block content %}
+<section class="bg-gray-50">
+  <div class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+
+    <nav class="text-sm text-gray-500">
+      <a href="{{ url_for('internal_portal') }}" class="hover:text-gray-700">Staff Portal</a>
+      <span class="mx-2 text-gray-300">/</span>
+      <a href="{{ url_for('admin_console') }}" class="hover:text-gray-700">Incident Reports</a>
+      <span class="mx-2 text-gray-300">/</span>
+      <span class="font-mono font-medium text-gray-700">#{{ rid }}</span>
+    </nav>
+
+    <div class="mt-4 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <div class="border-b border-gray-200 bg-white px-6 py-5">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h1 class="text-xl font-bold tracking-tight text-gray-900">{{ report.title }}</h1>
+            <p class="mt-1 text-sm text-gray-500">Report <span class="font-mono">#{{ rid }}</span> &middot; {{ report.department }} &middot; {{ report.date }}</p>
+          </div>
+          {% if report.severity == 'Critical' %}
+            <span class="inline-flex flex-none items-center rounded-full bg-red-50 px-3 py-1 text-xs font-medium text-red-700">Critical</span>
+          {% elif report.severity == 'High' %}
+            <span class="inline-flex flex-none items-center rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700">High</span>
+          {% else %}
+            <span class="inline-flex flex-none items-center rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">Low</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="px-6 py-6">
+        <pre class="overflow-x-auto whitespace-pre-wrap break-words rounded-lg bg-gray-50 p-4 font-mono text-sm leading-6 text-gray-800">{{ report.body }}</pre>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="{{ url_for('admin_console') }}" class="text-sm font-medium text-blue-600 hover:text-blue-700">&larr; Back to Incident Reports</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/session.js') }}"></script>
+{% endblock %}

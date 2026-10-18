@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Index of {{ path }} · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <div class="panel">
+    <div class="panel-h">Index of {{ path }}</div>
+    <div class="callout dirlist">
+      <ul>
+        {% if url_base and url_base != '/' and url_base != '/resources/' %}
+          <li><span class="fileicon">📁</span><a href="../">../</a></li>
+        {% endif %}
+        {% for d in dirs %}
+          <li><span class="fileicon">📁</span><a href="{{ url_base }}{{ d }}/">{{ d }}/</a></li>
+        {% endfor %}
+        {% for f in files %}
+          <li><span class="fileicon">📄</span><a href="{{ url_base }}{{ f }}">{{ f }}</a></li>
+        {% endfor %}
+      </ul>
+      {% if project %}<p class="dirnote">Index generated for members of this project.</p>{% endif %}
+    </div>
+  </div>
+{% endblock %}

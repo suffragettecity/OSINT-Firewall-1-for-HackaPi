@@ -1,0 +1,30 @@
+{% extends "auth_base.html" %}
+{% block title %}Sign in · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <h1 class="auth-title">Staff sign in</h1>
+  <p class="auth-lead">Use your {{ COMPANY }} staff credentials to access your inbox and project folders.</p>
+
+  {% if error %}
+    <div class="login-error">{{ error }}</div>
+  {% endif %}
+  {% if hint %}
+    <div class="login-hint">Password hint (self-service): <span class="hintglyphs">{{ hint }}</span></div>
+  {% endif %}
+  {% if attempts %}
+    <div class="login-attempts">⚠ {{ attempts }}</div>
+  {% endif %}
+
+  <form method="post" action="{{ url_for('login') }}" class="login-form" autocomplete="off">
+    <input type="hidden" name="next" value="{{ next }}">
+    <label>Staff ID
+      <input type="text" name="staff_id" placeholder="NPC-0000" required autofocus>
+    </label>
+    <label>Password
+      <input type="password" name="password" placeholder="••••••••" required>
+    </label>
+    <button type="submit">Sign in</button>
+  </form>
+{% endblock %}
+{% block foot %}
+  New here? <a href="{{ url_for('signup') }}">Create an intern account</a> · Trouble signing in? Contact the IT Service Desk.
+{% endblock %}

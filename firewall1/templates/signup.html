@@ -1,0 +1,27 @@
+{% extends "auth_base.html" %}
+{% block title %}Create intern account · {{ SITE_NAME }}{% endblock %}
+{% block content %}
+  <h1 class="auth-title">Create your intern account</h1>
+  <p class="auth-lead">{{ COMPANY }} issues you a temporary intern ID. Set a password that follows the company policy to continue.</p>
+
+  {% if error %}
+    <div class="login-error">{{ error }}</div>
+  {% endif %}
+
+  <div class="policy-box">
+    <div class="policy-h">Password policy</div>
+    <p class="policy-rule">{{ policy }}</p>
+    <p class="policy-eg">Example: <code>{{ example }}</code></p>
+  </div>
+
+  <form method="post" action="{{ url_for('signup') }}" class="login-form" autocomplete="off">
+    <input type="hidden" name="next" value="{{ next }}">
+    <label>Choose a password
+      <input type="password" name="password" placeholder="{{ example }}" required>
+    </label>
+    <button type="submit">Create account &amp; continue</button>
+  </form>
+{% endblock %}
+{% block foot %}
+  Already have a staff account? <a href="{{ url_for('login') }}">Sign in</a>
+{% endblock %}

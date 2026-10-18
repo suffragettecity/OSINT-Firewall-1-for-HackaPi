@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Services — {{ company }}{% endblock %}
+{% block content %}
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900">Services</h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Every engagement runs on the same operating standard: measured inputs, defensible outputs,
+        and a reporting layer your stakeholders can trust.
+      </p>
+    </div>
+
+    <div class="mt-16 space-y-6">
+      <div class="rounded-2xl border border-gray-200 bg-gray-50 p-8">
+        <h2 class="text-xl font-semibold text-gray-900">Treasury Services</h2>
+        <p class="mt-3 text-gray-600">
+          Daily liquidity management, FX exposure hedging and cash positioning, benchmarked against
+          live institutional rates. Delivered through the Fanum Treasury desk.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-gray-50 p-8">
+        <h2 class="text-xl font-semibold text-gray-900">Risk &amp; Advisory</h2>
+        <p class="mt-3 text-gray-600">
+          Independent scenario analysis, governance review and board-ready reporting. Our models are
+          revalidated quarterly and documented end to end.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-gray-200 bg-gray-50 p-8">
+        <h2 class="text-xl font-semibold text-gray-900">Platform &amp; Data</h2>
+        <p class="mt-3 text-gray-600">
+          A consolidated reporting platform that unifies positions across custodians and markets into
+          a single, auditable source of truth.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

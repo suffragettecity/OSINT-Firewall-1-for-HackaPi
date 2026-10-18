@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  {% from "_macros.html" import avatar, tick %}
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="{{ url_for('feed') }}">
+        <span class="mark" aria-hidden="true">NPC</span>
+        <span>{{ SITE_NAME }} <span class="sub">· {{ COMPANY }}</span></span>
+      </a>
+      <div class="searchbox">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+        <form action="{{ url_for('search') }}" method="get" role="search">
+          <input type="text" name="q" value="{{ request.args.get('q','') }}"
+                 placeholder="Search people and posts" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="side left">
+      <nav class="nav">
+        <a href="{{ url_for('feed') }}" class="{{ 'active' if active=='home' }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg> Home
+        </a>
+        <a href="{{ url_for('search') }}" class="{{ 'active' if active=='search' }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg> Explore
+        </a>
+        <a href="{{ url_for('notifications') }}" class="{{ 'active' if active=='notifications' }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg> Notifications
+          <span class="nav-dot" aria-label="unread"></span>
+        </a>
+        {% if session_user %}
+        <a href="{{ url_for('messages') }}" class="{{ 'active' if active=='messages' }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Messages
+        </a>
+        {% endif %}
+        {% if session_user %}
+        <a href="{{ url_for('logout') }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg> Log out
+        </a>
+        {% else %}
+        <a href="{{ url_for('login') }}" class="{{ 'active' if active=='login' }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg> Log in
+        </a>
+        {% endif %}
+      </nav>
+      {% if session_user %}<div class="whoami">Signed in · <b>{{ session_user }}</b></div>{% endif %}
+      <button class="post-btn" type="button" data-compose-focus>Post</button>
+    </aside>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <aside class="side right">
+      <div class="panel trends">
+        <div class="panel-h">What's happening</div>
+        {% for t in trends %}
+        <div class="row">
+          <span class="cat">{{ t.cat }}</span>
+          <span class="t">#{{ t.tag }}</span>
+          <span class="c">{{ t.posts }}</span>
+        </div>
+        {% endfor %}
+        <a class="trends-more" href="{{ url_for('search') }}">Show more</a>
+      </div>
+      <div class="panel who">
+        <div class="panel-h">Who to follow</div>
+        {% for u in suggested %}
+        <div class="post">
+          <a href="{{ url_for('profile', username=u.username) }}">{{ avatar(u.name, u.color) }}</a>
+          <div class="post-main" style="display:flex;align-items:center;gap:8px;">
+            <a href="{{ url_for('profile', username=u.username) }}">
+              <div class="name">{{ u.name }}{% if u.verified %} {{ tick() }}{% endif %}</div>
+              <div class="handle">@{{ u.username }}</div>
+            </a>
+            <button class="follow off" type="button" data-follow>Follow</button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">© 2026 {{ COMPANY }} · {{ SITE_NAME }} is an internal tool. Posts you compose during the audit stay on your device.</footer>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
