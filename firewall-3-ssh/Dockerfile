@@ -23,7 +23,12 @@ RUN chown dani:dani \
       /srv/company/archive/2025/hr/.old/.timesheet_dani.jpg \
       /srv/company/archive/2025/hr/.old/README_FOLDER.txt
 
+# Challenge 3: malware_dropper.sh, c2_beacon.log, and the cleanup verifier.
+# The verifier is the only new executable — it just polls file existence,
+# never executes the dropper and never makes network calls.
 COPY malware/ /opt/malware/
+RUN chmod +x /opt/malware/malware_dropper.sh /opt/malware/watch_cleanup.sh
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
